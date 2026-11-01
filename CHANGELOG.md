@@ -2,7 +2,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [Unreleased]
+## [1.0.0] - 2026-11-01
 
 ### Added
 - `MoviehouseUk::Cinema.all` and `MoviehouseUk::Cinema.new(id)` for Movie House's cinemas, from the cinema menu on the Movie House home page and the site code on each venue's page, with addresses from the Food Standards Agency's food hygiene ratings and coordinates from OpenStreetMap.
