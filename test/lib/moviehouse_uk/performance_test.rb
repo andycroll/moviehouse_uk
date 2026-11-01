@@ -56,6 +56,23 @@ class MoviehouseUk::PerformanceTest < Minitest::Test
     assert_equal 'https://moviehouse.co.uk/newry/booking/123/film', performance.booking_url
   end
 
+  def test_ticket_links_are_kept_as_given
+    performance = MoviehouseUk::Performance.new(
+      booking_url: "#{TICKETS}123", cinema_id: 'MH_COLE',
+      cinema_name: 'Coleraine', film_name: 'Film', starting_at: Time.utc(2026, 11, 1)
+    )
+
+    assert_equal "#{TICKETS}123", performance.booking_url
+  end
+
+  def test_missing_booking_links_stay_missing
+    performance = MoviehouseUk::Performance.new(
+      cinema_id: 'MH_COLE', cinema_name: 'Coleraine', film_name: 'Film', starting_at: Time.utc(2026, 11, 1)
+    )
+
+    assert_nil performance.booking_url
+  end
+
   def test_subtitled_screenings
     performances = on(DATE + 1)
 

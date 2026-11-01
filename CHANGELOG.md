@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.0.1] - 2026-11-01
+
+### Fixed
+- `Performance#booking_url` keeps a ticketing link it was given and stays nil when there is none, instead of returning a link with an empty `perfCode` or raising.
+
 ## [1.0.0] - 2026-11-01
 
 ### Added

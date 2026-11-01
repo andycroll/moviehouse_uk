@@ -92,8 +92,9 @@ module MoviehouseUk
     #   'https://moviehousecoleraine.admit-one.co.uk/tickets/?perfCode=97317'
     def booking_url
       site = TICKET_SITES[cinema_id]
-      if site
-        "#{site}/tickets/?perfCode=#{super[PERF_CODE, 1]}"
+      code = super.to_s[PERF_CODE, 1]
+      if site && code
+        "#{site}/tickets/?perfCode=#{code}"
       else
         super
       end
