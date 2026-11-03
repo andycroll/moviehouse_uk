@@ -90,10 +90,10 @@ class MoviehouseUk::PerformanceTest < Minitest::Test
     events = performances_at('MH_COLE').select { |p| p.variant.include?('arts') }
 
     assert_equal [
-      'National Theatre Live: Golden Boy',
+      'Golden Boy',
       'Giant - The Play',
       "Andrew Lloyd Webber's Starlight Express",
-      'Royal Ballet and Opera: The Nutcracker'
+      'The Nutcracker'
     ], events.map(&:film_name)
     assert_equal %w(arts subtitled), events[2].variant
   end
